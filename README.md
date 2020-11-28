@@ -25,5 +25,5 @@ The rich text content is saved in its own model that's associated with any exist
 
 > <%= form.rich_text_area :content %>
 
-4. This is create a editable text field in the form
+4. The above creates a editable text field in the form
 

@@ -25,6 +25,7 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.2'
   gem 'spring'
+  gem 'amazing_print'
 end
 
 group :test do

@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# This Project is basically used for learning purpose.
 
-Things you may want to cover:
+## Consider the following covered:
 
-* Ruby version
+* Action Text
 
-* System dependencies
+Action Text brings rich text content and editing to Rails via Trix editor.
+The rich text content is saved in its own model that's associated with any existing Active Record model in the application.
 
-* Configuration
+### Consider the steps below for integration:
 
-* Database creation
+1. bin/rails action_text:install
+The above command creates a necessary migration and adds the Yarn Package
 
-* Database initialization
+2. Add - has_rich_text :content
+a rich text field to an existing model, 
 
-* How to run the test suite
+3. Than, in the form use
 
-* Services (job queues, cache servers, search engines, etc.)
+<%= form.label :content %>
+<%= form.rich_text_area :content %>
 
-* Deployment instructions
-
-* ...
+4. This is create a editable text field in the form

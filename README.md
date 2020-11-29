@@ -67,3 +67,35 @@ message_id and message_checksum are there to avoid duplication.
 http://localhost:3000/rails/conductor/action_mailbox/inbound_emails/new
 
 deliver an inbound email. Based on the to email, it’ll route to mailbox and process the email.
+
+5. After creating the action_mailbox_inbound_emails, verify the same using the query below:
+
+> sql = "Select * from action_mailbox_inbound_emails"
+
+> ActiveRecord::Base.connection.execute(sql)
+
+### OverCommit
+
+Using Git hooks to control code quality. Consider the advantages below:
+
+1. It maintains code consistency
+
+2. It helps catch unnecessary code
+
+3. It helps avoid conflicts between developers and also to remember about the conventions
+
+4. It helps optimize performance and avoid problems with security
+
+In order to integrate, consider the commands below:
+
+> gem 'overcommit'
+
+> touch .overcommit.yml
+
+*And override default configuration under your needs.*
+
+> overcommit --install
+
+> overcommit --sign
+
+

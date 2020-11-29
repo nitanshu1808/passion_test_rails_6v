@@ -1,0 +1,11 @@
+AllCops:
+  Exclude:
+    - 'spec/**/*'
+    - 'db/schema.rb'
+  TargetRubyVersion: 2.4
+
+Metrics/LineLength:
+  Max: 120
+
+FrozenStringLiteralComment:
+  Enabled: false

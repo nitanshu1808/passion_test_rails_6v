@@ -39,7 +39,7 @@ Action Mailbox routes incoming emails to controller-like mailboxes.
 
 It ships with ingresses for Mailgun, Mandrill, Postmark, and SendGrid.
 
-### Consider the steps below for integration:
+#### Consider the steps below for integration:
 
 1. rails action_mailbox:install
 

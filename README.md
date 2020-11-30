@@ -151,3 +151,17 @@ In order to integrate, consider the commands below:
 > overcommit --install
 
 > overcommit --sign
+
+
+### zeitwerk
+
+Zeitwerk is an efficient and thread-safe code loader for Ruby.
+
+
+> lib/my_gem.rb (main file)
+
+> require "zeitwerk"
+
+> loader = Zeitwerk::Loader.for_gem
+
+> loader.setup # ready!

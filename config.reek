@@ -1,3 +1,2 @@
-PreCommit:
-  Reek:
-    enabled: true
+UnusedPrivateMethod:
+  enabled: true

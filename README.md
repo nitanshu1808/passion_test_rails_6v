@@ -74,6 +74,60 @@ deliver an inbound email. Based on the to email, it’ll route to mailbox and pr
 
 > ActiveRecord::Base.connection.execute(sql)
 
+### Multiple Databases
+
+1. Automatic connection switching for the model you're working with
+
+2. Automatic swapping between the primary and replica depending on the HTTP verb and recent writes1.
+
+
+Limitations
+
+1. Sharding
+
+2. Joining across clusters
+
+3. Load balancing replicas
+
+#### Set up
+
+> Login to the database as a root user and create a readonly user
+
+> CREATE USER 'root_readonly' IDENTIFIED BY 'test';
+
+> GRANT SELECT ON *.* TO 'root_readonly';
+
+> Now try to login into the system
+
+> update database.yml with the configuration below:
+
+*development:
+  primary:
+    database: my_primary_database
+    user: root
+    adapter: sqlite3
+  primary_replica:
+    database: my_primary_database
+    user: root_readonly
+    adapter: sqlite3
+    replica: true
+  animals:
+    database: my_animals_database
+    user: animals_root
+    adapter: sqlite3
+    migrations_paths: db/animals_migrate
+  animals_replica:
+    database: my_animals_database
+    user: animals_readonly
+    adapter: sqlite3
+    replica: true*
+
+
+> https://dev.to/fedeagripa/rails-6-multiple-databases-337k
+
+> rake db:rollback with the database name or with Version
+
+
 ### OverCommit
 
 Using Git hooks to control code quality. Consider the advantages below:
@@ -97,13 +151,3 @@ In order to integrate, consider the commands below:
 > overcommit --install
 
 > overcommit --sign
-
-
-### Multiple Databases
-
-> CREATE USER 'root_readonly' IDENTIFIED BY 'test';
-
-> GRANT SELECT ON *.* TO 'root_readonly';
-
-> Now try to login into the system
-

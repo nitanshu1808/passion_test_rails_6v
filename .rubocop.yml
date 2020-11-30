@@ -1,11 +1,34 @@
 AllCops:
+  NewCops: enable
   Exclude:
     - 'spec/**/*'
-    - 'db/schema.rb'
+    - 'db/**/*'
+    - 'config/environments/*'
   TargetRubyVersion: 2.4
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 120
 
-FrozenStringLiteralComment:
+Style/FrozenStringLiteralComment:
   Enabled: false
+
+Lint/DuplicateRegexpCharacterClassElement: # (new in 1.1)
+  Enabled: true
+Lint/EmptyBlock: # (new in 1.1)
+  Enabled: true
+Lint/NoReturnInBeginEndBlocks: # (new in 1.2)
+  Enabled: true
+Lint/ToEnumArguments: # (new in 1.1)
+  Enabled: true
+Lint/UnmodifiedReduceAccumulator: # (new in 1.1)
+  Enabled: true
+Style/ArgumentsForwarding: # (new in 1.1)
+  Enabled: true
+Style/CollectionCompact: # (new in 1.2)
+  Enabled: true
+Style/DocumentDynamicEvalDefinition: # (new in 1.1)
+  Enabled: true
+Style/NegatedIfElseCondition: # (new in 1.2)
+  Enabled: true
+Style/SwapValues: # (new in 1.1)
+  Enabled: true 

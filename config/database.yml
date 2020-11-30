@@ -10,8 +10,25 @@ default: &default
   timeout: 5000
 
 development:
-  <<: *default
-  database: db/development.sqlite3
+  primary:
+    database: my_primary_database
+    user: root
+    adapter: sqlite3
+  primary_replica:
+    database: my_primary_database
+    user: root_readonly
+    adapter: sqlite3
+    replica: true
+  animals:
+    database: my_animals_database
+    user: animals_root
+    adapter: sqlite3
+    migrations_paths: db/animals_migrate
+  animals_replica:
+    database: my_animals_database
+    user: animals_readonly
+    adapter: sqlite3
+    replica: true
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

@@ -99,3 +99,11 @@ In order to integrate, consider the commands below:
 > overcommit --sign
 
 
+### Multiple Databases
+
+> CREATE USER 'root_readonly' IDENTIFIED BY 'test';
+
+> GRANT SELECT ON *.* TO 'root_readonly';
+
+> Now try to login into the system
+
